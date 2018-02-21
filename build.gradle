@@ -1,0 +1,21 @@
+buildscript {
+    buildscript {
+        repositories {
+            maven { url MAVEN_REPOSITORY_URL }
+        }
+
+        dependencies {
+            classpath 'net.ltgt.gradle:gradle-apt-plugin:0.13'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url MAVEN_REPOSITORY_URL }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
