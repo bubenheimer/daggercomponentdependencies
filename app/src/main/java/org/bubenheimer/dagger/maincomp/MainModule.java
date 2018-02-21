@@ -26,7 +26,7 @@ abstract class MainModule {
 
     @MainScope
     @Binds
-    abstract long provideLongValue(final @ScopeBeforeUse long value);
+    abstract long bindLongValue(@ScopeBeforeUse long value);
 
     @Provides
     static @Named("valuethree") long provideValueThree(final long value) {
