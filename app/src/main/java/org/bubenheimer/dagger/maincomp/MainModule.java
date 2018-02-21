@@ -8,6 +8,7 @@ import org.bubenheimer.dagger.thirdcomp.ScopeBeforeUse;
 
 import javax.inject.Named;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
@@ -24,10 +25,8 @@ abstract class MainModule {
     }
 
     @MainScope
-    @Provides
-    static long provideLongValue(final @ScopeBeforeUse long value) {
-        return value;
-    }
+    @Binds
+    abstract long provideLongValue(final @ScopeBeforeUse long value);
 
     @Provides
     static @Named("valuethree") long provideValueThree(final long value) {
