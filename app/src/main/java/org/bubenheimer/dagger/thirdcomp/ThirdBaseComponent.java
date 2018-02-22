@@ -6,6 +6,8 @@ package org.bubenheimer.dagger.thirdcomp;
 
 import dagger.Component;
 
-@Component(modules = ThirdFacadeModule.class)
-public interface ThirdComponent extends ThirdBaseComponent {
+@ThirdScope
+@Component(modules = ThirdModule.class)
+public interface ThirdBaseComponent {
+    long longValue();
 }

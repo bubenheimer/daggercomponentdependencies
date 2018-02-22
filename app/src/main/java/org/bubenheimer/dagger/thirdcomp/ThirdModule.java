@@ -11,8 +11,9 @@ import dagger.Provides;
 abstract class ThirdModule {
     private static long counter = 100L;
 
+    @ThirdScope
     @Provides
-    static @ScopeBeforeUse long provideValue() {
+    static long provideValue() {
         return counter++;
     }
 }

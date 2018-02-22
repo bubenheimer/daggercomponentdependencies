@@ -4,37 +4,22 @@
 
 package org.bubenheimer.dagger.maincomp;
 
-import org.bubenheimer.dagger.thirdcomp.ScopeBeforeUse;
-
 import javax.inject.Named;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 
 @Module
 abstract class MainModule {
-    @Provides
-    static @Named("valueone") int provideValueOne(final int value) {
-        return value;
-    }
-
-    @Provides
-    static @Named("valuetwo") int provideValueTwo(final int value) {
-        return value;
-    }
-
-    @MainScope
     @Binds
-    abstract long bindLongValue(@ScopeBeforeUse long value);
+    abstract @Named("valueone") int provideValueOne(int value);
 
-    @Provides
-    static @Named("valuethree") long provideValueThree(final long value) {
-        return value;
-    }
+    @Binds
+    abstract @Named("valuetwo") int provideValueTwo(int value);
 
-    @Provides
-    static @Named("valuefour") long provideValueFour(final long value) {
-        return value;
-    }
+    @Binds
+    abstract @Named("valuethree") long provideValueThree(long value);
+
+    @Binds
+    abstract @Named("valuefour") long provideValueFour(long value);
 }
