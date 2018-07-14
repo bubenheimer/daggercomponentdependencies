@@ -1,11 +1,14 @@
+/*
+ * Copyright (c) 2015-2018 Uli Bubenheimer. All rights reserved.
+ */
+
 apply plugin: 'application'
-apply plugin: 'net.ltgt.apt-idea'
 
 mainClassName = 'org.bubenheimer.dagger.Main'
 
 dependencies {
-    String daggerVersion = '2.14.1'
+    String daggerVersion = '2.16'
 
     implementation "com.google.dagger:dagger:${daggerVersion}"
-    apt "com.google.dagger:dagger-compiler:${daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
 }

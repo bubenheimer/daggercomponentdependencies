@@ -1,18 +1,10 @@
-buildscript {
-    buildscript {
-        repositories {
-            maven { url MAVEN_REPOSITORY_URL }
-        }
-
-        dependencies {
-            classpath 'net.ltgt.gradle:gradle-apt-plugin:0.13'
-        }
-    }
-}
+/*
+ * Copyright (c) 2015-2018 Uli Bubenheimer. All rights reserved.
+ */
 
 allprojects {
     repositories {
-        maven { url MAVEN_REPOSITORY_URL }
+        jcenter()
     }
 }
 
